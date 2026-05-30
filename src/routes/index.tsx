@@ -294,7 +294,7 @@ function Hero() {
             </div>
           </Reveal>
           <Reveal delay={480}>
-            <div className="mt-8 flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="mt-8 flex items-center gap-4 text-sm text-muted-foreground justify-center lg:justify-start">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
                   <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-neon/70 to-primary/70 border-2 border-background" />
@@ -305,8 +305,8 @@ function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={300} className="relative">
-          <div className="relative aspect-square max-w-lg mx-auto">
+        <Reveal delay={300} className="relative order-first lg:order-last">
+          <div className="relative aspect-square max-w-xs sm:max-w-md lg:max-w-lg mx-auto">
             <div className="absolute inset-0 rounded-full bg-neon/20 blur-3xl animate-pulse-glow" />
             <img
               src={heroOrb}
