@@ -495,18 +495,18 @@ function Plans() {
 // ============================================================
 function Testimonials() {
   return (
-    <section id="resultados" className="relative py-24 md:py-32 bg-surface/30 border-y border-border/60">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="resultados" className="relative py-20 sm:py-24 md:py-32 bg-surface/30 border-y border-border/60">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
         <Reveal>
           <div className="max-w-2xl">
-            <span className="text-sm font-semibold text-neon uppercase tracking-wider">Resultados reais</span>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight">
+            <span className="text-xs sm:text-sm font-semibold text-neon uppercase tracking-wider">Resultados reais</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight">
               Negócios que <span className="text-gradient-neon">escalaram</span> com a VSA
             </h2>
           </div>
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-10 sm:mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {siteConfig.testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 100}>
               <figure className="h-full p-6 rounded-2xl bg-card border border-border hover:border-neon/50 hover:-translate-y-1 transition-all duration-300">
@@ -533,16 +533,16 @@ function Testimonials() {
 function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
   return (
-    <section id="faq" className="relative py-24 md:py-32">
-      <div className="max-w-3xl mx-auto px-6">
+    <section id="faq" className="relative py-20 sm:py-24 md:py-32">
+      <div className="max-w-3xl mx-auto px-5 sm:px-6">
         <Reveal>
           <div className="text-center">
-            <span className="text-sm font-semibold text-neon uppercase tracking-wider">Perguntas frequentes</span>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight">Tirando suas dúvidas</h2>
+            <span className="text-xs sm:text-sm font-semibold text-neon uppercase tracking-wider">Perguntas frequentes</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">Tirando suas dúvidas</h2>
           </div>
         </Reveal>
 
-        <div className="mt-14 space-y-3">
+        <div className="mt-10 sm:mt-14 space-y-3">
           {siteConfig.faq.map((item, i) => {
             const open = openIdx === i;
             return (
@@ -550,10 +550,10 @@ function FAQ() {
                 <div className={`rounded-2xl border transition-all ${open ? "border-neon/60 bg-card shadow-glow-sm" : "border-border bg-card/60 hover:border-neon/40"}`}>
                   <button
                     onClick={() => setOpenIdx(open ? null : i)}
-                    className="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
+                    className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left cursor-pointer"
                     aria-expanded={open}
                   >
-                    <span className="font-semibold text-base md:text-lg">{item.q}</span>
+                    <span className="font-semibold text-sm sm:text-base md:text-lg">{item.q}</span>
                     <ChevronDown className={`w-5 h-5 shrink-0 text-neon transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
                   </button>
                   <div
@@ -561,7 +561,7 @@ function FAQ() {
                     style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
                   >
                     <div className="overflow-hidden">
-                      <p className="px-6 pb-6 text-muted-foreground leading-relaxed">{item.a}</p>
+                      <p className="px-5 sm:px-6 pb-5 sm:pb-6 text-sm sm:text-base text-muted-foreground leading-relaxed">{item.a}</p>
                     </div>
                   </div>
                 </div>
@@ -577,30 +577,30 @@ function FAQ() {
 // ============================================================
 function FinalCTA() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
+    <section className="relative py-20 sm:py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0 grid-bg pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neon/5 to-transparent" />
-      <div className="relative max-w-4xl mx-auto px-6 text-center">
+      <div className="relative max-w-4xl mx-auto px-5 sm:px-6 text-center">
         <Reveal>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glow-border text-xs font-medium text-neon mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glow-border text-[11px] sm:text-xs font-medium text-neon mb-6">
             <Rocket className="w-3.5 h-3.5" /> Vagas limitadas por mês
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight">
             Pronto para ter um site que <span className="text-gradient-neon">realmente vende?</span>
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto">
+          <p className="mt-5 sm:mt-6 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto">
             Fale agora com um especialista da VSA Studios e receba um diagnóstico estratégico gratuito do seu negócio digital.
           </p>
           <a
             href={siteConfig.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center justify-center gap-2 h-14 px-10 rounded-xl bg-neon text-neon-foreground font-semibold text-base shadow-glow hover:scale-[1.03] transition-all animate-pulse-glow"
+            className="mt-8 sm:mt-10 inline-flex items-center justify-center gap-2 h-14 px-6 sm:px-10 rounded-xl bg-neon text-neon-foreground font-semibold text-sm sm:text-base shadow-glow hover:scale-[1.03] transition-all animate-pulse-glow"
           >
             <MessageCircle className="w-5 h-5" />
             {siteConfig.ctaPrimary}
           </a>
-          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+          <div className="mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground">
             <ShieldCheck className="w-4 h-4 text-neon" />
             Resposta em até 1 hora útil
           </div>
@@ -613,9 +613,9 @@ function FinalCTA() {
 // ============================================================
 function Footer() {
   return (
-    <footer className="border-t border-border/60 bg-surface/30 backdrop-blur">
-      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-3">
+    <footer className="border-t border-border/60 bg-surface/30 backdrop-blur pb-24 md:pb-0">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 py-10 sm:py-12 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
+        <div className="flex flex-col sm:flex-row items-center gap-3">
           <img src={vsaLogo} alt="VSA Studios" width={120} height={36} className="h-10 w-auto object-contain" />
           <div className="text-xs text-muted-foreground">{siteConfig.footer.tagline}</div>
         </div>
@@ -633,7 +633,8 @@ function FloatingCTA() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-neon text-neon-foreground grid place-items-center shadow-glow hover:scale-110 transition-transform animate-pulse-glow"
+      className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 w-14 h-14 rounded-full bg-neon text-neon-foreground grid place-items-center shadow-glow hover:scale-110 transition-transform animate-pulse-glow"
+      style={{ marginBottom: "env(safe-area-inset-bottom)" }}
     >
       <MessageCircle className="w-6 h-6" />
     </a>
