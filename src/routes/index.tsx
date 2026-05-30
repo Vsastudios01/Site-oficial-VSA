@@ -305,7 +305,7 @@ function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={300} className="relative order-first lg:order-last">
+        <Reveal delay={300} className="relative">
           <div className="relative aspect-square max-w-xs sm:max-w-md lg:max-w-lg mx-auto">
             <div className="absolute inset-0 rounded-full bg-neon/20 blur-3xl animate-pulse-glow" />
             <img
