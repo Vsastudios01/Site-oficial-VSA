@@ -325,15 +325,15 @@ function Hero() {
 // ============================================================
 function Stats() {
   return (
-    <section className="relative py-16 border-y border-border/60 bg-surface/30 backdrop-blur">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section className="relative py-12 sm:py-16 border-y border-border/60 bg-surface/30 backdrop-blur">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
         {siteConfig.stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 100}>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-gradient-neon tabular-nums">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient-neon tabular-nums">
                 <CountUp end={s.value} suffix={s.suffix} />
               </div>
-              <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
+              <p className="mt-2 text-xs sm:text-sm text-muted-foreground">{s.label}</p>
             </div>
           </Reveal>
         ))}
@@ -345,29 +345,29 @@ function Stats() {
 // ============================================================
 function Pains() {
   return (
-    <section id="problema" className="relative py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="problema" className="relative py-20 sm:py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
         <Reveal>
           <div className="max-w-2xl">
-            <span className="text-sm font-semibold text-neon uppercase tracking-wider">O problema</span>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight">
+            <span className="text-xs sm:text-sm font-semibold text-neon uppercase tracking-wider">O problema</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight">
               Seu site está <span className="text-gradient-neon">queimando dinheiro</span> todos os dias
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-base sm:text-lg text-muted-foreground">
               Estes 3 erros silenciosos estão impedindo o seu negócio de crescer na internet:
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-3 gap-6">
+        <div className="mt-10 sm:mt-14 grid sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
           {siteConfig.pains.map((p, i) => (
             <Reveal key={p.title} delay={i * 120}>
-              <div className="group h-full p-8 rounded-2xl bg-card border border-border hover:border-neon/50 hover:-translate-y-1 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-destructive/10 border border-destructive/30 grid place-items-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="group h-full p-6 sm:p-8 rounded-2xl bg-card border border-border hover:border-neon/50 hover:-translate-y-1 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-destructive/10 border border-destructive/30 grid place-items-center mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
                   <p.icon className="w-6 h-6 text-destructive" />
                 </div>
-                <h3 className="text-xl font-bold">{p.title}</h3>
-                <p className="mt-3 text-muted-foreground leading-relaxed">{p.desc}</p>
+                <h3 className="text-lg sm:text-xl font-bold">{p.title}</h3>
+                <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">{p.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -380,32 +380,32 @@ function Pains() {
 // ============================================================
 function Solutions() {
   return (
-    <section id="solucao" className="relative py-24 md:py-32 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-neon/10 blur-[140px] pointer-events-none" />
-      <div className="relative max-w-7xl mx-auto px-6">
+    <section id="solucao" className="relative py-20 sm:py-24 md:py-32 overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] sm:w-[800px] sm:h-[800px] rounded-full bg-neon/10 blur-[140px] pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6">
         <Reveal>
           <div className="max-w-2xl">
-            <span className="text-sm font-semibold text-neon uppercase tracking-wider">A solução VSA</span>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight">
+            <span className="text-xs sm:text-sm font-semibold text-neon uppercase tracking-wider">A solução VSA</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight">
               O método que transforma seu site em uma <span className="text-gradient-neon">máquina de vendas</span>
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-base sm:text-lg text-muted-foreground">
               Combinamos engenharia de alta performance, design premium e copy estratégica em um único entregável.
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-6">
+        <div className="mt-10 sm:mt-14 grid md:grid-cols-2 gap-5 sm:gap-6">
           {siteConfig.solutions.map((s, i) => (
             <Reveal key={s.title} delay={i * 100}>
-              <div className="group relative h-full p-8 rounded-2xl bg-card glow-border overflow-hidden hover:shadow-glow transition-all duration-500">
+              <div className="group relative h-full p-6 sm:p-8 rounded-2xl bg-card glow-border overflow-hidden hover:shadow-glow transition-all duration-500">
                 <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-neon/20 blur-3xl group-hover:bg-neon/40 transition-colors" />
                 <div className="relative">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-neon/30 to-primary/20 border border-neon/40 grid place-items-center mb-6 group-hover:scale-110 transition-transform">
-                    <s.icon className="w-7 h-7 text-neon" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-neon/30 to-primary/20 border border-neon/40 grid place-items-center mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+                    <s.icon className="w-6 h-6 sm:w-7 sm:h-7 text-neon" />
                   </div>
-                  <h3 className="text-2xl font-bold">{s.title}</h3>
-                  <p className="mt-3 text-muted-foreground leading-relaxed">{s.desc}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold">{s.title}</h3>
+                  <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             </Reveal>
@@ -419,30 +419,31 @@ function Solutions() {
 // ============================================================
 function Plans() {
   return (
-    <section id="metodo" className="relative py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="metodo" className="relative py-20 sm:py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
         <Reveal>
           <div className="max-w-2xl mx-auto text-center">
-            <span className="text-sm font-semibold text-neon uppercase tracking-wider">Modelo de contratação</span>
-            <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight">
+            <span className="text-xs sm:text-sm font-semibold text-neon uppercase tracking-wider">Modelo de contratação</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight">
               Setup único + Mensalidade que <span className="text-gradient-neon">cabe no seu caixa</span>
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-base sm:text-lg text-muted-foreground">
               Você paga uma vez para criar e uma mensalidade leve para manter, otimizar e crescer.
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="mt-12 sm:mt-14 grid md:grid-cols-2 gap-8 sm:gap-6 max-w-5xl mx-auto">
           {siteConfig.plans.map((plan, i) => (
             <Reveal key={plan.name} delay={i * 150}>
               <div
-                className={`relative h-full p-8 md:p-10 rounded-3xl flex flex-col ${
+                className={`relative h-full p-6 sm:p-8 md:p-10 rounded-3xl flex flex-col ${
                   plan.highlight
-                    ? "bg-gradient-to-br from-card to-surface border-2 border-neon/60 shadow-glow"
+                    ? "bg-gradient-to-br from-card to-surface border-2 border-neon/60 shadow-glow mt-4 md:mt-0"
                     : "bg-card border border-border"
                 }`}
               >
+
                 {plan.highlight && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-neon text-neon-foreground text-xs font-bold uppercase tracking-wider shadow-glow-sm">
                     {plan.tag}
