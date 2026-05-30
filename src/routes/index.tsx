@@ -615,13 +615,8 @@ function Footer() {
     <footer className="border-t border-border/60 bg-surface/30 backdrop-blur">
       <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
-          <span className="w-8 h-8 rounded-md bg-gradient-to-br from-neon to-primary grid place-items-center">
-            <Sparkles className="w-4 h-4 text-neon-foreground" />
-          </span>
-          <div>
-            <div className="font-bold">{siteConfig.brand}</div>
-            <div className="text-xs text-muted-foreground">{siteConfig.footer.tagline}</div>
-          </div>
+          <img src={vsaLogo} alt="VSA Studios" width={120} height={36} className="h-10 w-auto object-contain" />
+          <div className="text-xs text-muted-foreground">{siteConfig.footer.tagline}</div>
         </div>
         <p className="text-xs text-muted-foreground">{siteConfig.footer.rights}</p>
       </div>
