@@ -255,65 +255,50 @@ function Hero() {
       <div className="absolute inset-0 grid-bg pointer-events-none" />
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[420px] h-[420px] sm:w-[600px] sm:h-[600px] rounded-full bg-neon/20 blur-[120px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-        <div className="text-center lg:text-left">
-          <Reveal>
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glow-border text-[11px] sm:text-xs font-medium text-neon">
-              <Zap className="w-3.5 h-3.5" /> {siteConfig.hero.badge}
-            </span>
-          </Reveal>
-          <Reveal delay={120}>
-            <h1 className="mt-5 sm:mt-6 text-[2rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              {siteConfig.hero.title}{" "}
-              <span className="text-gradient-neon">{siteConfig.hero.titleHighlight}</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={240}>
-            <p className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              {siteConfig.hero.subtitle}
-            </p>
-          </Reveal>
-          <Reveal delay={360}>
-            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 sm:justify-center lg:justify-start">
-              <a
-                href={siteConfig.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2 h-14 px-6 sm:px-8 rounded-xl bg-neon text-neon-foreground font-semibold text-sm sm:text-base shadow-glow hover:scale-[1.03] hover:shadow-glow transition-all animate-pulse-glow"
-              >
-                {siteConfig.ctaPrimary}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="#metodo"
-                className="inline-flex items-center justify-center gap-2 h-14 px-8 rounded-xl border border-border bg-surface/40 backdrop-blur font-medium hover:border-neon/60 hover:bg-surface transition-colors"
-              >
-                Ver método
-              </a>
+      <div className="relative max-w-5xl mx-auto px-5 sm:px-6 text-center">
+        <Reveal>
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glow-border text-[11px] sm:text-xs font-medium text-neon">
+            <Zap className="w-3.5 h-3.5" /> {siteConfig.hero.badge}
+          </span>
+        </Reveal>
+        <Reveal delay={120}>
+          <h1 className="mt-5 sm:mt-6 text-[2.5rem] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight">
+            {siteConfig.hero.title}{" "}
+            <span className="text-gradient-neon">{siteConfig.hero.titleHighlight}</span>
+          </h1>
+        </Reveal>
+        <Reveal delay={240}>
+          <p className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            {siteConfig.hero.subtitle}
+          </p>
+        </Reveal>
+        <Reveal delay={360}>
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <a
+              href={siteConfig.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-2 h-14 px-6 sm:px-8 rounded-xl bg-neon text-neon-foreground font-semibold text-sm sm:text-base shadow-glow hover:scale-[1.03] hover:shadow-glow transition-all animate-pulse-glow"
+            >
+              {siteConfig.ctaPrimary}
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="#metodo"
+              className="inline-flex items-center justify-center gap-2 h-14 px-8 rounded-xl border border-border bg-surface/40 backdrop-blur font-medium hover:border-neon/60 hover:bg-surface transition-colors"
+            >
+              Ver método
+            </a>
+          </div>
+        </Reveal>
+        <Reveal delay={480}>
+          <div className="mt-8 flex items-center gap-4 text-sm text-muted-foreground justify-center">
+            <div className="flex -space-x-2">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-neon/70 to-primary/70 border-2 border-background" />
+              ))}
             </div>
-          </Reveal>
-          <Reveal delay={480}>
-            <div className="mt-8 flex items-center gap-4 text-sm text-muted-foreground justify-center lg:justify-start">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-neon/70 to-primary/70 border-2 border-background" />
-                ))}
-              </div>
-              <span><strong className="text-foreground">+180</strong> negócios já escalaram com a VSA</span>
-            </div>
-          </Reveal>
-        </div>
-
-        <Reveal delay={300} className="relative">
-          <div className="relative aspect-square max-w-xs sm:max-w-md lg:max-w-lg mx-auto">
-            <div className="absolute inset-0 rounded-full bg-neon/20 blur-3xl animate-pulse-glow" />
-            <img
-              src={heroOrb}
-              alt="Esfera de energia VSA Studios"
-              width={1024}
-              height={1024}
-              className="relative w-full h-full object-cover rounded-3xl animate-float"
-            />
+            <span><strong className="text-foreground">+180</strong> negócios já escalaram com a VSA</span>
           </div>
         </Reveal>
       </div>
