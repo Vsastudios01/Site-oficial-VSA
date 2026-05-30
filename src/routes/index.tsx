@@ -208,11 +208,8 @@ function Header() {
   return (
     <header className="fixed top-0 inset-x-0 z-40 backdrop-blur-xl bg-background/70 border-b border-border/60">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 group">
-          <span className="w-8 h-8 rounded-md bg-gradient-to-br from-neon to-primary shadow-glow-sm grid place-items-center">
-            <Sparkles className="w-4 h-4 text-neon-foreground" />
-          </span>
-          <span className="font-bold tracking-tight text-lg">{siteConfig.brand}</span>
+        <a href="#top" className="flex items-center gap-2 group" aria-label={siteConfig.brand}>
+          <img src={vsaLogo} alt="VSA Studios" width={140} height={40} className="h-9 w-auto object-contain transition-transform group-hover:scale-105" />
         </a>
         <nav className="hidden md:flex items-center gap-8">
           {siteConfig.nav.map((n) => (
