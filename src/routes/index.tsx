@@ -5,6 +5,7 @@ import {
   Gauge, Crown, Brain, Check, ChevronDown, MessageCircle, ArrowRight, Star,
 } from "lucide-react";
 import heroOrb from "@/assets/hero-orb.jpg";
+import vsaLogo from "@/assets/vsa-logo.jpeg";
 import { Reveal } from "@/components/vsa/Reveal";
 import { CountUp } from "@/components/vsa/CountUp";
 
@@ -207,11 +208,8 @@ function Header() {
   return (
     <header className="fixed top-0 inset-x-0 z-40 backdrop-blur-xl bg-background/70 border-b border-border/60">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 group">
-          <span className="w-8 h-8 rounded-md bg-gradient-to-br from-neon to-primary shadow-glow-sm grid place-items-center">
-            <Sparkles className="w-4 h-4 text-neon-foreground" />
-          </span>
-          <span className="font-bold tracking-tight text-lg">{siteConfig.brand}</span>
+        <a href="#top" className="flex items-center gap-2 group" aria-label={siteConfig.brand}>
+          <img src={vsaLogo} alt="VSA Studios" width={140} height={40} className="h-9 w-auto object-contain transition-transform group-hover:scale-105" />
         </a>
         <nav className="hidden md:flex items-center gap-8">
           {siteConfig.nav.map((n) => (
@@ -617,13 +615,8 @@ function Footer() {
     <footer className="border-t border-border/60 bg-surface/30 backdrop-blur">
       <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
-          <span className="w-8 h-8 rounded-md bg-gradient-to-br from-neon to-primary grid place-items-center">
-            <Sparkles className="w-4 h-4 text-neon-foreground" />
-          </span>
-          <div>
-            <div className="font-bold">{siteConfig.brand}</div>
-            <div className="text-xs text-muted-foreground">{siteConfig.footer.tagline}</div>
-          </div>
+          <img src={vsaLogo} alt="VSA Studios" width={120} height={36} className="h-10 w-auto object-contain" />
+          <div className="text-xs text-muted-foreground">{siteConfig.footer.tagline}</div>
         </div>
         <p className="text-xs text-muted-foreground">{siteConfig.footer.rights}</p>
       </div>
