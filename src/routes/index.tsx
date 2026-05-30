@@ -252,35 +252,35 @@ function Header() {
 // ============================================================
 function Hero() {
   return (
-    <section id="top" className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
+    <section id="top" className="relative pt-24 pb-16 sm:pt-32 sm:pb-24 md:pt-40 md:pb-32 overflow-hidden">
       <div className="absolute inset-0 grid-bg pointer-events-none" />
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-neon/20 blur-[120px] pointer-events-none" />
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[420px] h-[420px] sm:w-[600px] sm:h-[600px] rounded-full bg-neon/20 blur-[120px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        <div>
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <div className="text-center lg:text-left">
           <Reveal>
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glow-border text-xs font-medium text-neon">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glow-border text-[11px] sm:text-xs font-medium text-neon">
               <Zap className="w-3.5 h-3.5" /> {siteConfig.hero.badge}
             </span>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
+            <h1 className="mt-5 sm:mt-6 text-[2rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
               {siteConfig.hero.title}{" "}
               <span className="text-gradient-neon">{siteConfig.hero.titleHighlight}</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
+            <p className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
               {siteConfig.hero.subtitle}
             </p>
           </Reveal>
           <Reveal delay={360}>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 sm:justify-center lg:justify-start">
               <a
                 href={siteConfig.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2 h-14 px-8 rounded-xl bg-neon text-neon-foreground font-semibold text-base shadow-glow hover:scale-[1.03] hover:shadow-glow transition-all animate-pulse-glow"
+                className="group inline-flex items-center justify-center gap-2 h-14 px-6 sm:px-8 rounded-xl bg-neon text-neon-foreground font-semibold text-sm sm:text-base shadow-glow hover:scale-[1.03] hover:shadow-glow transition-all animate-pulse-glow"
               >
                 {siteConfig.ctaPrimary}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
