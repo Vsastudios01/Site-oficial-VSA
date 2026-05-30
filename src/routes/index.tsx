@@ -4,7 +4,6 @@ import {
   Zap, Target, Rocket, ShieldCheck, Sparkles, TrendingDown, Frown, Clock,
   Gauge, Crown, Brain, Check, ChevronDown, MessageCircle, ArrowRight, Star,
 } from "lucide-react";
-import heroOrb from "@/assets/hero-orb.jpg";
 import vsaLogo from "@/assets/vsa-logo.jpeg";
 import { Reveal } from "@/components/vsa/Reveal";
 import { CountUp } from "@/components/vsa/CountUp";
