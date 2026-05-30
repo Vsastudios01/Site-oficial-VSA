@@ -7,6 +7,15 @@ export function Reveal({ children, delay = 0, className = "" }: { children: Reac
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // If element is already in viewport on mount, show immediately (no IO delay flash).
+    const rect = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top < vh && rect.bottom > 0) {
+      setSeen(true);
+      return;
+    }
+
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -14,7 +23,7 @@ export function Reveal({ children, delay = 0, className = "" }: { children: Reac
           io.disconnect();
         }
       },
-      { threshold: 0.15 },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
