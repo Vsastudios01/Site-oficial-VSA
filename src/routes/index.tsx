@@ -6,7 +6,7 @@ import {
   Building2, PackageSearch, Workflow, Bot, Search, Compass, Code2, Send, Menu, X,
   Layers, Target, Eye,
 } from "lucide-react";
-import vsaLogo from "@/assets/vsa-logo.jpeg";
+import vsaLogo from "@/assets/vsa-logo.png.asset.json";
 import { Reveal } from "@/components/vsa/Reveal";
 import { SolutionWizard } from "@/components/vsa/SolutionWizard";
 
@@ -198,7 +198,7 @@ function Header() {
     <header className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${scrolled || open ? "bg-background/80 backdrop-blur-xl border-b border-border/60" : "bg-transparent border-b border-transparent"}`}>
       <div className="max-w-7xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between gap-4">
         <a href="#top" className="flex items-center shrink-0" aria-label="VSA Studios — início">
-          <img src={vsaLogo} alt="VSA Studios" width={140} height={40} className="h-8 sm:h-9 w-auto object-contain" />
+          <img src={vsaLogo.url} alt="VSA Studios" width={261} height={131} className="h-12 sm:h-14 w-auto object-contain" />
         </a>
         <nav aria-label="Principal" className="hidden lg:flex items-center gap-1">
           {siteConfig.nav.map((n) => (
@@ -613,7 +613,7 @@ function Footer() {
     <footer className="border-t border-border/60 bg-surface/30 pb-24 md:pb-0">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 py-12 grid gap-8 md:grid-cols-[1.5fr_1fr_1fr]">
         <div>
-          <img src={vsaLogo} alt="VSA Studios" width={120} height={36} loading="lazy" className="h-10 w-auto object-contain" />
+          <img src={vsaLogo.url} alt="VSA Studios" width={261} height={131} loading="lazy" className="h-16 sm:h-20 w-auto object-contain" />
           <p className="mt-3 text-sm text-muted-foreground max-w-xs">{siteConfig.footer.tagline}</p>
         </div>
         <nav aria-label="Rodapé">
