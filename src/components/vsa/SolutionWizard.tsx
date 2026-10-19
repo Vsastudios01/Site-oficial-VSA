@@ -26,7 +26,7 @@ export function SolutionWizard({ config }: { config: WizardConfig }) {
   const message = rec
     ? `Olá, VSA Studios! Fiz o diagnóstico no site:\n` +
       config.steps.map((s) => `• ${s.question} ${answers[s.id] ?? "-"}`).join("\n") +
-      `\nSugestão inicial: ${rec.title}. Gostaria de conversar.`
+      `\nSugestão inicial: ${rec.title}. Quero conhecer suas soluções.`
     : "";
 
   return (
