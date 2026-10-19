@@ -13,14 +13,14 @@ import { SolutionWizard } from "@/components/vsa/SolutionWizard";
 // ============================================================
 // SITE CONFIG — edite tudo daqui
 // ============================================================
-// ⚠️ PREENCHA: número oficial do WhatsApp (DDI + DDD + número, só dígitos)
-const WHATSAPP_NUMBER = "5500000000000";
+// Número oficial do WhatsApp (DDI + DDD + número, só dígitos)
+const WHATSAPP_NUMBER = "5575998098817";
 const wa = (msg: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
 const siteConfig = {
   brand: "VSA Studios",
   whatsapp: wa,
-  defaultMessage: "Olá, VSA Studios! Vim pelo site e quero impulsionar meu negócio.",
+  defaultMessage: "Olá, VSA Studios! Quero conhecer suas soluções.",
   nav: [
     { label: "Serviços", id: "servicos" },
     { label: "Projetos", id: "projetos" },
@@ -391,7 +391,7 @@ function Services() {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 <p className="mt-4 text-xs text-muted-foreground"><span className="text-foreground font-medium">Recomendado para:</span> {s.forWho}</p>
                 <a
-                  href={wa(`Olá, VSA Studios! Quero saber mais sobre: ${s.name}.`)}
+                  href={wa(siteConfig.defaultMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Quero saber mais sobre ${s.name}`}
@@ -432,7 +432,7 @@ function Projects() {
                   <p className="text-xs font-semibold uppercase tracking-wider text-neon">{p.category}</p>
                   <h3 className="mt-2 text-lg font-bold">{p.name}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.goal}</p>
-                  <a href={wa(`Olá, VSA Studios! Gostei da demonstração "${p.name}" e quero algo parecido.`)} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold hover:text-neon transition-colors">
+                  <a href={wa(siteConfig.defaultMessage)} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold hover:text-neon transition-colors">
                     <Eye className="w-4 h-4" /> Quero algo assim
                   </a>
                 </div>
@@ -513,7 +513,7 @@ function Plans() {
                     </li>
                   ))}
                 </ul>
-                <a href={wa(`Olá, VSA Studios! Tenho interesse no plano ${plan.name}.`)} target="_blank" rel="noopener noreferrer" className={plan.highlight ? `${btnPrimary} mt-8` : `${btnGhost} mt-8`}>
+                <a href={wa(siteConfig.defaultMessage)} target="_blank" rel="noopener noreferrer" className={plan.highlight ? `${btnPrimary} mt-8` : `${btnGhost} mt-8`}>
                   Contratar este plano <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
