@@ -9,6 +9,7 @@ import {
 import vsaLogo from "@/assets/vsa-logo.png.asset.json";
 import { Reveal } from "@/components/vsa/Reveal";
 import { SolutionWizard } from "@/components/vsa/SolutionWizard";
+import { VideoPreview } from "@/components/vsa/VideoPreview";
 
 // ============================================================
 // SITE CONFIG — edite tudo daqui
@@ -58,9 +59,9 @@ const siteConfig = {
     { icon: Bot, name: "Chatbots e assistentes", benefit: "Atendimento mais rápido", desc: "Assistentes para responder dúvidas frequentes e direcionar o cliente. Escopo avaliado sob consulta.", forWho: "Negócios com alto volume de perguntas repetidas." },
   ],
   projects: [
-    { name: "Clínica — conceito", category: "Site institucional", goal: "Gerar agendamentos pelo WhatsApp com visual de autoridade médica.", hue: 300 },
-    { name: "Mentoria — conceito", category: "Landing page", goal: "Apresentar uma oferta de mentoria e captar interessados.", hue: 330 },
-    { name: "Comércio local — conceito", category: "Página de serviços", goal: "Mostrar serviços e facilitar o pedido de orçamento.", hue: 270 },
+    { name: "Clínica — conceito", category: "Site institucional", goal: "Gerar agendamentos pelo WhatsApp com visual de autoridade médica.", hue: 300, video: true },
+    { name: "Mentoria — conceito", category: "Landing page", goal: "Apresentar uma oferta de mentoria e captar interessados.", hue: 330, video: false },
+    { name: "Comércio local — conceito", category: "Página de serviços", goal: "Mostrar serviços e facilitar o pedido de orçamento.", hue: 270, video: false },
   ],
   method: [
     { icon: Search, title: "Diagnóstico", desc: "Entendemos o negócio, o público e o objetivo da página." },
@@ -418,16 +419,22 @@ function Projects() {
           {siteConfig.projects.map((p, i) => (
             <Reveal key={p.name} delay={i * 100}>
               <article className="group h-full rounded-2xl bg-card border border-border overflow-hidden hover:border-neon/50 transition-colors">
-                <div className="relative aspect-[4/3] overflow-hidden" style={{ background: `radial-gradient(circle at 30% 20%, oklch(0.55 0.2 ${p.hue} / 0.5), transparent 60%), var(--surface)` }} aria-hidden="true">
-                  <div className="absolute inset-6 rounded-xl border border-border bg-background/70 p-4 space-y-2 transition-transform duration-500 group-hover:scale-[1.03] group-hover:-rotate-1">
-                    <div className="h-2.5 w-12 rounded bg-neon/70" />
-                    <div className="h-4 w-3/4 rounded bg-foreground/70 mt-3" />
-                    <div className="h-4 w-1/2 rounded bg-foreground/40" />
-                    <div className="h-2 w-full rounded bg-muted mt-2" />
-                    <div className="h-6 w-24 rounded-md bg-neon mt-3" />
+                {p.video ? (
+                  <div className="p-3">
+                    <VideoPreview />
                   </div>
-                  <span className="absolute top-3 left-3 px-2 py-1 rounded-md bg-background/80 backdrop-blur text-[10px] font-semibold uppercase tracking-wider">Conceito</span>
-                </div>
+                ) : (
+                  <div className="relative aspect-[4/3] overflow-hidden" style={{ background: `radial-gradient(circle at 30% 20%, oklch(0.55 0.2 ${p.hue} / 0.5), transparent 60%), var(--surface)` }} aria-hidden="true">
+                    <div className="absolute inset-6 rounded-xl border border-border bg-background/70 p-4 space-y-2 transition-transform duration-500 group-hover:scale-[1.03] group-hover:-rotate-1">
+                      <div className="h-2.5 w-12 rounded bg-neon/70" />
+                      <div className="h-4 w-3/4 rounded bg-foreground/70 mt-3" />
+                      <div className="h-4 w-1/2 rounded bg-foreground/40" />
+                      <div className="h-2 w-full rounded bg-muted mt-2" />
+                      <div className="h-6 w-24 rounded-md bg-neon mt-3" />
+                    </div>
+                    <span className="absolute top-3 left-3 px-2 py-1 rounded-md bg-background/80 backdrop-blur text-[10px] font-semibold uppercase tracking-wider">Conceito</span>
+                  </div>
+                )}
                 <div className="p-6">
                   <p className="text-xs font-semibold uppercase tracking-wider text-neon">{p.category}</p>
                   <h3 className="mt-2 text-lg font-bold">{p.name}</h3>
