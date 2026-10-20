@@ -9,6 +9,7 @@ import {
 import vsaLogo from "@/assets/vsa-logo.png.asset.json";
 import { Reveal } from "@/components/vsa/Reveal";
 import { SolutionWizard } from "@/components/vsa/SolutionWizard";
+import { VideoPreview } from "@/components/vsa/VideoPreview";
 
 // ============================================================
 // SITE CONFIG — edite tudo daqui
@@ -58,9 +59,9 @@ const siteConfig = {
     { icon: Bot, name: "Chatbots e assistentes", benefit: "Atendimento mais rápido", desc: "Assistentes para responder dúvidas frequentes e direcionar o cliente. Escopo avaliado sob consulta.", forWho: "Negócios com alto volume de perguntas repetidas." },
   ],
   projects: [
-    { name: "Clínica — conceito", category: "Site institucional", goal: "Gerar agendamentos pelo WhatsApp com visual de autoridade médica.", hue: 300 },
-    { name: "Mentoria — conceito", category: "Landing page", goal: "Apresentar uma oferta de mentoria e captar interessados.", hue: 330 },
-    { name: "Comércio local — conceito", category: "Página de serviços", goal: "Mostrar serviços e facilitar o pedido de orçamento.", hue: 270 },
+    { name: "Clínica — conceito", category: "Site institucional", goal: "Gerar agendamentos pelo WhatsApp com visual de autoridade médica.", hue: 300, video: true },
+    { name: "Mentoria — conceito", category: "Landing page", goal: "Apresentar uma oferta de mentoria e captar interessados.", hue: 330, video: false },
+    { name: "Comércio local — conceito", category: "Página de serviços", goal: "Mostrar serviços e facilitar o pedido de orçamento.", hue: 270, video: false },
   ],
   method: [
     { icon: Search, title: "Diagnóstico", desc: "Entendemos o negócio, o público e o objetivo da página." },
