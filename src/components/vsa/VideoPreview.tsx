@@ -112,7 +112,7 @@ export function VideoPreview({ duration = "0:29" }: { duration?: string }) {
             poster={poster.url}
             controls
             playsInline
-            className="h-full max-h-full w-full max-w-5xl rounded-lg bg-black object-contain"
+            className="h-auto max-h-full w-auto max-w-full rounded-lg bg-black"
           />
           <button
             type="button"
