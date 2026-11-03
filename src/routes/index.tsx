@@ -59,7 +59,7 @@ const siteConfig = {
     { icon: Bot, name: "Chatbots e assistentes", benefit: "Atendimento mais rápido", desc: "Assistentes para responder dúvidas frequentes e direcionar o cliente. Escopo avaliado sob consulta.", forWho: "Negócios com alto volume de perguntas repetidas." },
   ],
   projects: [
-    { name: "Clínica — conceito", category: "Site institucional", goal: "Gerar agendamentos pelo WhatsApp com visual de autoridade médica.", hue: 300, video: true },
+    { name: "Coringa dos Prompts", category: "Plataforma digital", goal: "Landing page de conversão com área de membros.", hue: 300, video: true },
     { name: "Mentoria — conceito", category: "Landing page", goal: "Apresentar uma oferta de mentoria e captar interessados.", hue: 330, video: false },
     { name: "Comércio local — conceito", category: "Página de serviços", goal: "Mostrar serviços e facilitar o pedido de orçamento.", hue: 270, video: false },
   ],
