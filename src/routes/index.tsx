@@ -10,6 +10,8 @@ import vsaLogo from "@/assets/vsa-logo.png.asset.json";
 import { Reveal } from "@/components/vsa/Reveal";
 import { SolutionWizard } from "@/components/vsa/SolutionWizard";
 import { VideoPreview } from "@/components/vsa/VideoPreview";
+import clipRestaurante from "@/assets/video_restaurante_sol_muta.mp4.asset.json";
+import posterRestaurante from "@/assets/poster-restaurante-sol-muta.jpg.asset.json";
 
 // ============================================================
 // SITE CONFIG — edite tudo daqui
@@ -60,8 +62,8 @@ const siteConfig = {
   ],
   projects: [
     { name: "Coringa dos Prompts", category: "Plataforma digital", goal: "Landing page de conversão com área de membros.", hue: 300, video: true },
-    { name: "Mentoria — conceito", category: "Landing page", goal: "Apresentar uma oferta de mentoria e captar interessados.", hue: 330, video: false },
-    { name: "Comércio local — conceito", category: "Página de serviços", goal: "Mostrar serviços e facilitar o pedido de orçamento.", hue: 270, video: false },
+    { name: "Restaurante — conceito", category: "Landing page", goal: "Mostrar a experiência, o cardápio e captar reservas pelo WhatsApp.", hue: 330, video: true, clip: clipRestaurante, poster: posterRestaurante, duration: "0:26" },
+    { name: "Comércio local — conceito", category: "Página de serviços", goal: "Mostrar serviços e facilitar o pedido de orçamento.", hue: 270, video: false, clip: undefined, poster: undefined, duration: undefined },
   ],
   method: [
     { icon: Search, title: "Diagnóstico", desc: "Entendemos o negócio, o público e o objetivo da página." },
@@ -421,7 +423,7 @@ function Projects() {
               <article className="group h-full rounded-2xl bg-card border border-border overflow-hidden hover:border-neon/50 transition-colors">
                 {p.video ? (
                   <div className="p-3">
-                    <VideoPreview />
+                    <VideoPreview clip={p.clip} poster={p.poster} duration={p.duration} />
                   </div>
                 ) : (
                   <div className="relative aspect-[4/3] overflow-hidden" style={{ background: `radial-gradient(circle at 30% 20%, oklch(0.55 0.2 ${p.hue} / 0.5), transparent 60%), var(--surface)` }} aria-hidden="true">

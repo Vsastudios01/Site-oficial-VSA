@@ -1,14 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 import { Play, X } from "lucide-react";
-import poster from "@/assets/video-mockup-poster.jpg.asset.json";
-import clip from "@/assets/video_mockup_vsa_1.mp4.asset.json";
+import defaultPoster from "@/assets/video-mockup-poster.jpg.asset.json";
+import defaultClip from "@/assets/video_mockup_vsa_1.mp4.asset.json";
+
+type AssetPointer = { url: string };
 
 /**
  * Minimalist video preview that opens the clip in fullscreen.
  * Clicking the preview opens a fullscreen overlay (native fullscreen when the
  * browser allows it) with the video playing and its own controls.
  */
-export function VideoPreview({ duration = "0:29" }: { duration?: string }) {
+export function VideoPreview({
+  clip = defaultClip,
+  poster = defaultPoster,
+  duration = "0:29",
+}: {
+  clip?: AssetPointer;
+  poster?: AssetPointer;
+  duration?: string;
+}) {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
