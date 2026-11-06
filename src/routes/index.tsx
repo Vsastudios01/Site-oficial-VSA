@@ -12,6 +12,8 @@ import { SolutionWizard } from "@/components/vsa/SolutionWizard";
 import { VideoPreview } from "@/components/vsa/VideoPreview";
 import clipRestaurante from "@/assets/video_restaurante_sol_muta.mp4.asset.json";
 import posterRestaurante from "@/assets/poster-restaurante-sol-muta.jpg.asset.json";
+import clipToca from "@/assets/video_restaurante_toca_do_cobra.mp4.asset.json";
+import posterToca from "@/assets/poster-restaurante-toca-do-cobra.jpg.asset.json";
 
 // ============================================================
 // SITE CONFIG — edite tudo daqui
@@ -63,7 +65,7 @@ const siteConfig = {
   projects: [
     { name: "Coringa dos Prompts", category: "Plataforma digital", goal: "Landing page de conversão com área de membros.", hue: 300, video: true },
     { name: "Restaurante — conceito", category: "Landing page", goal: "Mostrar a experiência, o cardápio e captar reservas pelo WhatsApp.", hue: 330, video: true, clip: clipRestaurante, poster: posterRestaurante, duration: "0:26" },
-    { name: "Comércio local — conceito", category: "Página de serviços", goal: "Mostrar serviços e facilitar o pedido de orçamento.", hue: 270, video: false, clip: undefined, poster: undefined, duration: undefined },
+    { name: "Restaurante Toca do Cobra", category: "Site institucional", goal: "Apresentar o cardápio, as avaliações no Google e captar reservas pelo WhatsApp.", hue: 270, video: true, clip: clipToca, poster: posterToca, duration: "0:19" },
   ],
   method: [
     { icon: Search, title: "Diagnóstico", desc: "Entendemos o negócio, o público e o objetivo da página." },
