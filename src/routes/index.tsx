@@ -76,13 +76,13 @@ const siteConfig = {
   methodIncludes: ["Design personalizado", "Versão para celular", "Botões de WhatsApp", "Hospedagem e SSL (nos planos mensais)", "Rodadas de ajustes"],
   plans: [
     {
-      name: "Landing Page de Elite", tag: "Mais escolhido", setup: "R$ 2.997", monthly: "R$ 297/mês",
-      features: ["Landing page de alta conversão", "Copy estratégica", "Design premium personalizado", "Otimizada para velocidade", "Integrações (WhatsApp, Pixel, GA4)", "Hospedagem e SSL inclusos", "Suporte e ajustes mensais"],
+      name: "PLANO ESSENCIAL", tag: "Mais escolhido", setup: "R$ 397,00", monthly: "R$59/mês",
+      features: ["Landing page de alta conversão", "Copy estratégica", "Design premium personalizado", "Otimizada para velocidade", "Integrações (WhatsApp, Pixel, GA4)", "Hospedagem e SSL inclusos", "Suporte e ajustes mensais\n\n"],
       highlight: true,
     },
     {
-      name: "Ecossistema VSA", tag: "Para escalar", setup: "R$ 6.997", monthly: "R$ 597/mês",
-      features: ["Site institucional completo", "Até 3 landing pages", "Funil + automação WhatsApp", "Blog otimizado para SEO", "Painel admin personalizado", "Otimização contínua", "Reuniões estratégicas mensais"],
+      name: "Ecossistema VSA", tag: "Para escalar", setup: "R$ 697,00", monthly: "R$ 109/mês",
+      features: ["Tudo do Plano Essencial", "Animações e interações personalizadas\n\nSEO aprimorado", "Funil + automação WhatsApp", "Blog otimizado para SEO", "Integração com Instagram", "Otimização contínua", "Configuração de domínio personalizado"],
       highlight: false,
     },
   ],
@@ -102,7 +102,7 @@ const siteConfig = {
   ],
   footer: {
     tagline: "Tecnologia e design para negócios que querem crescer no digital.",
-    rights: `© ${new Date().getFullYear()} VSA Studios. Todos os direitos reservados.`,
+    rights: "© 2024 VSA Studios. Todos os direitos reservados.",
   },
 };
 
