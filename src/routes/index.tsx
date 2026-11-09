@@ -310,9 +310,26 @@ function Hero() {
 /** Project mockup with a luminous frame and responsive-design details. */
 function DeviceMockup() {
   const mockup = siteConfig.hero.mockup;
+  const [tilt, setTilt] = useState({ x: 8, y: -14 });
+
+  const handleMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== "mouse") return;
+    const r = e.currentTarget.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    setTilt({ x: -py * 16, y: px * 22 });
+  };
 
   return (
-    <div className="group relative mx-auto max-w-[34rem] px-2 pb-8 pt-8 sm:px-4 lg:max-w-none">
+    <div
+      className="group relative mx-auto max-w-[34rem] px-2 pb-8 pt-8 [perspective:1400px] sm:px-4 lg:max-w-none"
+      onPointerMove={handleMove}
+      onPointerLeave={() => setTilt({ x: 8, y: -14 })}
+    >
+      <div
+        className="relative transition-transform duration-300 ease-out [transform-style:preserve-3d] motion-reduce:!transform-none"
+        style={{ transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)` }}
+      >
       <div className="absolute inset-x-8 top-1/2 h-2/3 -translate-y-1/2 rounded-full bg-neon/20 blur-[70px] transition-opacity duration-500 group-hover:opacity-80" aria-hidden="true" />
       <div className="absolute -right-3 top-2 h-24 w-24 rounded-full border border-neon/20 sm:-right-5 sm:h-32 sm:w-32" aria-hidden="true" />
       <div className="absolute -bottom-1 -left-2 h-20 w-20 rounded-full border border-neon/10 sm:h-28 sm:w-28" aria-hidden="true" />
@@ -333,18 +350,19 @@ function DeviceMockup() {
         </div>
       </div>
 
-      <div className="absolute left-0 top-0 flex items-center gap-2 rounded-xl border border-neon/30 bg-card/90 px-3 py-2 text-[11px] font-semibold shadow-glow-sm backdrop-blur-xl sm:-left-2 sm:px-4 sm:py-2.5 sm:text-xs">
+      <div className="absolute left-0 top-0 flex [transform:translateZ(60px)] items-center gap-2 rounded-xl border border-neon/30 bg-card/90 px-3 py-2 text-[11px] font-semibold shadow-glow-sm backdrop-blur-xl sm:-left-2 sm:px-4 sm:py-2.5 sm:text-xs">
         <span className="grid h-7 w-7 place-items-center rounded-lg bg-neon/15 text-neon">
           <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
         </span>
         {mockup.designBadge}
       </div>
 
-      <div className="absolute bottom-0 right-0 flex animate-float items-center gap-2 rounded-xl border border-neon/30 bg-card/90 px-3 py-2 text-[11px] font-semibold shadow-glow-sm backdrop-blur-xl sm:-right-2 sm:px-4 sm:py-2.5 sm:text-xs">
+      <div className="absolute bottom-0 right-0 flex [transform:translateZ(80px)] animate-float items-center gap-2 rounded-xl border border-neon/30 bg-card/90 px-3 py-2 text-[11px] font-semibold shadow-glow-sm backdrop-blur-xl sm:-right-2 sm:px-4 sm:py-2.5 sm:text-xs">
         <span className="grid h-7 w-7 place-items-center rounded-lg bg-neon/15 text-neon">
           <Smartphone className="h-3.5 w-3.5" aria-hidden="true" />
         </span>
         {mockup.devicesBadge}
+      </div>
       </div>
     </div>
   );
