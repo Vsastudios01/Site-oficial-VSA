@@ -36,7 +36,7 @@ const siteConfig = {
   ],
   hero: {
     badge: "Agência de tecnologia e design",
-    titleStart: "Seu negócio merece uma presença digital que gera",
+    titleLines: ["Seu negócio merece", "uma presença digital", "que gera"],
     titleHighlight: "resultados.",
     subtitle:
       "Sites profissionais, landing pages e soluções digitais desenvolvidas para valorizar sua marca, conquistar clientes e impulsionar suas vendas.",
@@ -266,8 +266,13 @@ function Hero() {
               <Zap className="w-3.5 h-3.5" /> {h.badge}
             </span>
           </div>
-          <h1 className="mt-6 text-[clamp(2.1rem,6.2vw,4.4rem)] leading-[1.04] font-bold tracking-tight text-balance animate-fade-in-up [animation-delay:100ms]">
-            {h.titleStart} <span className="text-gradient-neon">{h.titleHighlight}</span>
+          <h1 className="mt-6 text-[clamp(1.85rem,4.4vw,3.5rem)] leading-[1.12] font-bold tracking-tight animate-fade-in-up [animation-delay:100ms]">
+            {h.titleLines.map((line) => (
+              <span key={line} className="block text-balance">
+                {line}
+              </span>
+            ))}
+            <span className="block text-gradient-neon text-balance">{h.titleHighlight}</span>
           </h1>
           <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in-up [animation-delay:200ms]">
             {h.subtitle}
