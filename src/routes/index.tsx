@@ -7,6 +7,7 @@ import {
   Layers, Target, Eye,
 } from "lucide-react";
 import vsaLogo from "@/assets/vsa-logo.png.asset.json";
+import mockupVsa from "@/assets/mockup-vsa-toca-do-cobra.png.asset.json";
 import { Reveal } from "@/components/vsa/Reveal";
 import { SolutionWizard } from "@/components/vsa/SolutionWizard";
 import { VideoPreview } from "@/components/vsa/VideoPreview";
@@ -43,6 +44,12 @@ const siteConfig = {
       "Sites profissionais, landing pages e soluções digitais desenvolvidas para valorizar sua marca, conquistar clientes e impulsionar suas vendas.",
     ctaPrimary: "Quero impulsionar meu negócio",
     ctaSecondary: "Conhecer nossas soluções",
+    mockup: {
+      image: mockupVsa,
+      alt: "Site responsivo da Toca do Cobra apresentado em notebook e celular",
+      designBadge: "Design sob medida",
+      devicesBadge: "Desktop + mobile",
+    },
   },
   pillars: [
     { icon: Layers, title: "Soluções personalizadas", desc: "Nada de template genérico." },
@@ -300,36 +307,44 @@ function Hero() {
   );
 }
 
-/** CSS-only device composition — conceptual preview, no external images. */
+/** Project mockup with a luminous frame and responsive-design details. */
 function DeviceMockup() {
+  const mockup = siteConfig.hero.mockup;
+
   return (
-    <div className="relative mx-auto max-w-md lg:max-w-none" aria-hidden="true">
-      <div className="rounded-2xl border border-border bg-card shadow-glow-sm overflow-hidden">
-        <div className="flex items-center gap-1.5 px-4 h-9 border-b border-border bg-surface">
-          <span className="w-2.5 h-2.5 rounded-full bg-muted" /><span className="w-2.5 h-2.5 rounded-full bg-muted" /><span className="w-2.5 h-2.5 rounded-full bg-muted" />
-          <span className="ml-3 h-4 flex-1 max-w-[180px] rounded bg-muted/70" />
-        </div>
-        <div className="p-5 sm:p-6 space-y-4">
-          <div className="flex justify-between items-center"><span className="h-3 w-16 rounded bg-neon/60" /><span className="h-6 w-20 rounded-md bg-neon/80" /></div>
-          <div className="space-y-2 pt-3"><div className="h-5 w-4/5 rounded bg-foreground/80" /><div className="h-5 w-3/5 rounded bg-gradient-to-r from-neon to-primary" /></div>
-          <div className="space-y-1.5"><div className="h-2.5 w-full rounded bg-muted" /><div className="h-2.5 w-11/12 rounded bg-muted" /></div>
-          <div className="flex gap-2 pt-1"><span className="h-8 w-28 rounded-lg bg-neon" /><span className="h-8 w-24 rounded-lg border border-border" /></div>
-          <div className="grid grid-cols-3 gap-2 pt-2">
-            {[0, 1, 2].map((i) => <div key={i} className="h-16 rounded-lg bg-surface border border-border" />)}
-          </div>
-        </div>
-      </div>
-      <div className="absolute -bottom-8 -right-2 sm:-right-6 w-28 sm:w-32 rounded-[1.4rem] border-4 border-secondary bg-card shadow-glow-sm overflow-hidden animate-float">
-        <div className="p-3 space-y-2">
-          <div className="h-1.5 w-8 mx-auto rounded-full bg-muted" />
-          <div className="h-3 w-full rounded bg-foreground/80" /><div className="h-3 w-3/4 rounded bg-neon/80" />
-          <div className="h-1.5 w-full rounded bg-muted" /><div className="h-1.5 w-5/6 rounded bg-muted" />
-          <div className="h-6 w-full rounded-md bg-neon mt-2" />
-          <div className="h-10 w-full rounded-md bg-surface border border-border" />
+    <div className="group relative mx-auto max-w-[34rem] px-2 pb-8 pt-8 sm:px-4 lg:max-w-none">
+      <div className="absolute inset-x-8 top-1/2 h-2/3 -translate-y-1/2 rounded-full bg-neon/20 blur-[70px] transition-opacity duration-500 group-hover:opacity-80" aria-hidden="true" />
+      <div className="absolute -right-3 top-2 h-24 w-24 rounded-full border border-neon/20 sm:-right-5 sm:h-32 sm:w-32" aria-hidden="true" />
+      <div className="absolute -bottom-1 -left-2 h-20 w-20 rounded-full border border-neon/10 sm:h-28 sm:w-28" aria-hidden="true" />
+
+      <div className="relative rounded-[1.75rem] border border-neon/25 bg-surface/50 p-1.5 shadow-glow-sm backdrop-blur-md transition-all duration-500 group-hover:-translate-y-1 group-hover:border-neon/50 group-hover:shadow-glow sm:rounded-[2rem] sm:p-2">
+        <div className="relative overflow-hidden rounded-[1.4rem] bg-card sm:rounded-[1.65rem]">
+          <img
+            src={mockup.image.url}
+            alt={mockup.alt}
+            width={1200}
+            height={900}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            className="aspect-[4/3] h-auto w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+          />
+          <div className="pointer-events-none absolute inset-0 rounded-[1.4rem] ring-1 ring-inset ring-foreground/10 sm:rounded-[1.65rem]" aria-hidden="true" />
         </div>
       </div>
-      <div className="absolute -top-4 -left-3 sm:-left-6 px-3 py-2 rounded-xl glow-border bg-card/90 backdrop-blur text-xs flex items-center gap-2">
-        <Gauge className="w-4 h-4 text-neon" /> Rápido e mobile-first
+
+      <div className="absolute left-0 top-0 flex items-center gap-2 rounded-xl border border-neon/30 bg-card/90 px-3 py-2 text-[11px] font-semibold shadow-glow-sm backdrop-blur-xl sm:-left-2 sm:px-4 sm:py-2.5 sm:text-xs">
+        <span className="grid h-7 w-7 place-items-center rounded-lg bg-neon/15 text-neon">
+          <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+        </span>
+        {mockup.designBadge}
+      </div>
+
+      <div className="absolute bottom-0 right-0 flex animate-float items-center gap-2 rounded-xl border border-neon/30 bg-card/90 px-3 py-2 text-[11px] font-semibold shadow-glow-sm backdrop-blur-xl sm:-right-2 sm:px-4 sm:py-2.5 sm:text-xs">
+        <span className="grid h-7 w-7 place-items-center rounded-lg bg-neon/15 text-neon">
+          <Smartphone className="h-3.5 w-3.5" aria-hidden="true" />
+        </span>
+        {mockup.devicesBadge}
       </div>
     </div>
   );
