@@ -36,10 +36,10 @@ const siteConfig = {
   ],
   hero: {
     badge: "Agência de tecnologia e design",
-    titleStart: "Transformamos sua presença digital em",
-    titleHighlight: "oportunidades de negócio.",
+    titleStart: "Seu negócio merece uma presença digital que gera",
+    titleHighlight: "resultados.",
     subtitle:
-      "Sites, landing pages e soluções digitais criadas para apresentar melhor sua empresa, conquistar confiança e gerar mais oportunidades de venda.",
+      "Sites profissionais, landing pages e soluções digitais desenvolvidas para valorizar sua marca, conquistar clientes e impulsionar suas vendas.",
     ctaPrimary: "Quero impulsionar meu negócio",
     ctaSecondary: "Conhecer nossas soluções",
   },
