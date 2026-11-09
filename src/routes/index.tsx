@@ -313,7 +313,6 @@ function DeviceMockup() {
   const [tilt, setTilt] = useState({ x: 8, y: -14 });
 
   const handleMove = (e: ReactPointerEvent<HTMLDivElement>) => {
-    if (e.pointerType !== "mouse") return;
     const r = e.currentTarget.getBoundingClientRect();
     const px = (e.clientX - r.left) / r.width - 0.5;
     const py = (e.clientY - r.top) / r.height - 0.5;
