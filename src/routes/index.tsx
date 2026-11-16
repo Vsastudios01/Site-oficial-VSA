@@ -20,7 +20,7 @@ import posterToca from "@/assets/poster-restaurante-toca-do-cobra.jpg.asset.json
 // SITE CONFIG — edite tudo daqui
 // ============================================================
 // Número oficial do WhatsApp (DDI + DDD + número, só dígitos)
-const WHATSAPP_NUMBER = "5575998098817";
+const WHATSAPP_NUMBER = "5575998088817";
 const wa = (msg: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
 const siteConfig = {
